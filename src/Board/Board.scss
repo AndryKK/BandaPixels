@@ -1,0 +1,44 @@
+@mixin flex-type-space {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  border: 1px solid #111;
+  max-width: 1800px;
+  min-width: 600px;
+  border-radius: 15px;
+  margin-bottom: 60px;
+  min-height: 660px;
+  justify-content: center;
+
+}
+
+@mixin flex-type-Board-children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 33%;
+  min-height: 600px;
+  gap: 20px;
+}
+
+  .Board {
+    @include flex-type-space();
+    padding: 40px 0;
+
+    &__to-do {
+      @include flex-type-Board-children();
+      border-right: 1px solid #111;
+    }
+
+    &__inProgress {
+      @include flex-type-Board-children();
+      border-right: 1px solid #111;
+    }
+
+    &__done {
+      @include flex-type-Board-children();
+    }
+  }
+
+

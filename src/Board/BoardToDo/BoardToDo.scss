@@ -1,0 +1,54 @@
+@mixin avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background: #1400FF;
+  margin-left: 35px;
+}
+
+@mixin avatarName {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
+}
+
+.Board {
+  &__todo {
+    display: flex;
+    min-height: 130px;
+    width: calc(100% - 36px);
+    border-radius: 15px;
+    border: 1px solid #333333;
+    align-items: center;
+
+  }
+
+  &__avatar {
+    @include avatar();
+    &__name {
+      @include avatarName()
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    max-width: 258px;
+    width: calc(100% - 165px);
+    margin-left: 20px;
+  }
+}
+
+.drag {
+  background: black;
+  color: #fff;
+}
+

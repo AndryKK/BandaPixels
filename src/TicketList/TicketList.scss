@@ -1,0 +1,126 @@
+@mixin flex-type-space {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  border: 1px solid #111;
+  max-width: 1800px;
+  min-width: 600px;
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 60px;
+  min-height: 660px;
+
+}
+
+@mixin avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background: #1400FF;
+  margin-left: 35px;
+}
+
+@mixin avatarName {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
+}
+
+.ticket-list--wrap {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin: 30px 0;
+
+  &__name {
+    min-width: 250px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  &__button {
+    height: 50px;
+    min-width: 120px;
+  }
+}
+
+.App {
+  &__Ticket-list {
+    @include flex-type-space();
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.todo {
+  display: flex;
+  min-height: 130px;
+  max-width: 1720px;
+  border-radius: 15px;
+  border: 1px solid #333333;
+  align-items: center;
+
+  &__avatar {
+    @include avatar();
+    margin-left: 35px;
+    &__name {
+      @include avatarName()
+    }
+  }
+
+  &__text-status-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 165px)
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    height: 63px;
+    max-width: 1287px;
+    margin-left: 20px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    margin-left: 192px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  }
+}
+
+h1 {
+  font-family: Roboto;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-bottom: 40px;
+}
+
